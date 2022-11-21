@@ -1,0 +1,10 @@
+<div class="container">
+  <input type="text"  #fullName>
+
+  <select #roles id="">
+    <option value="admin">admin</option>
+    <option value="user">user</option>
+    <option value="guest">guest</option>
+  </select>
+  <button (click)="addUserHandler(fullName.value,roles.value)"> add user</button>
+</div>
