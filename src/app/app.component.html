@@ -2,7 +2,8 @@
   <app-add-user (addUser)="addUser($event)"></app-add-user>
 </div>
 
-
-<pre>
-  {{users | json }}
-</pre>
+<div>
+  <ng-container *ngFor="let user of users">
+    <app-user-item [user]="user"></app-user-item>
+  </ng-container>
+</div>
