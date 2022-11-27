@@ -3,29 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AddUserComponent, ButtonComponent, UserItemComponent} from "./components";
-import { RolePermissionDirective } from './directives/role-permission.directive';
-import { DropdownDirective } from './directives/dropdown.directive';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { DropdownItemComponent } from './components/dropdown/dropdown-item/dropdown-item.component';
+import {LogService} from "./services/log.service";
+import {UsersModule} from "./modules/users/users.module";
+import {ProductsModule} from "./modules/products/products.module";
+import {RouterModule} from "@angular/router";
+import {ProductsComponent} from "./modules/products/products.component";
+import {UsersComponent} from "./modules/users/users.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddUserComponent,
-    UserItemComponent,
-    ButtonComponent,
-    RolePermissionDirective,
-    DropdownDirective,
-    DropdownComponent,
-    DropdownItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // UsersModule,
+    // ProductsModule
   ],
-  providers: [],
+  providers: [
+    LogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

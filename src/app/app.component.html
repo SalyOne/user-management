@@ -1,13 +1,25 @@
-<div>
-  <app-add-user (addUserme)="addUser($event)"></app-add-user>
-</div>
+<!--<div>-->
+<!--  <app-add-user></app-add-user>-->
+<!--</div>-->
 
-<div class="user-items">
-  <ng-container *ngFor="let user of users; let i = index; let first = first; let last = last">
-    <app-user-item
-      [userme]="user"
-      (statusChanged)="changeStatusParent($event, i)"
-      (roleChanged)="changeRoleParent($event, i)"
-      ></app-user-item>
-  </ng-container>
+<!--<div class="user-items">-->
+<!--  <ng-container *ngFor="let user of users; let i = index; let first = first; let last = last">-->
+<!--    <app-user-item-->
+<!--      [userme]="user"-->
+<!--      [index]="i"-->
+<!--      ></app-user-item>-->
+<!--  </ng-container>-->
+<!--</div>-->
+<!--<div class="container">-->
+<!--  <div>-->
+<!--    <app-users></app-users>-->
+<!--  </div>-->
+<!--  <app-products></app-products>-->
+<!--</div>-->
+
+
+<div >
+  <a routerLink="/" style="margin-right: 15px">Users</a>
+  <a routerLink="/products">products</a>
+  <router-outlet></router-outlet>
 </div>

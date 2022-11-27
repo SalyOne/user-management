@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {IUser, UserRole} from "../../interfaces";
+import {IUser, UserRole} from "../../../../interfaces";
+import {UserService} from "../../../../services/user.service";
 
 @Component({
   selector: 'app-add-user',
@@ -7,16 +8,17 @@ import {IUser, UserRole} from "../../interfaces";
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent {
-  @Output() addUserme:EventEmitter<IUser> = new EventEmitter<IUser>();
+  // @Output() addUserme:EventEmitter<IUser> = new EventEmitter<IUser>();
 
+  constructor( private userService: UserService) {
+  }
   addUserHandlerMe(fullName: string, role: string) {
     if (!fullName || !role) return;
 
-    this.addUserme.emit({
+    this.userService.addUser({
       fullName:fullName,
       role: role as UserRole,
       status: 'inactive'
-    })
-    console.log("new user created: ", fullName, role);
+  })
   }
 }
