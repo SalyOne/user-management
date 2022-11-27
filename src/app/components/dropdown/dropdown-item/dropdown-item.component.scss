@@ -1,0 +1,11 @@
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: black;
+  &:hover{
+    background-color: orange;
+  }
+  &:last-child{
+    border-bottom: 0;
+  }
+}

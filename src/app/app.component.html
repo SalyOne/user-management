@@ -1,9 +1,13 @@
 <div>
-  <app-add-user (addUser)="addUser($event)"></app-add-user>
+  <app-add-user (addUserme)="addUser($event)"></app-add-user>
 </div>
 
-<div>
-  <ng-container *ngFor="let user of users">
-    <app-user-item [user]="user"></app-user-item>
+<div class="user-items">
+  <ng-container *ngFor="let user of users; let i = index; let first = first; let last = last">
+    <app-user-item
+      [userme]="user"
+      (statusChanged)="changeStatusParent($event, i)"
+      (roleChanged)="changeRoleParent($event, i)"
+      ></app-user-item>
   </ng-container>
 </div>

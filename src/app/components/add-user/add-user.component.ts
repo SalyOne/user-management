@@ -7,15 +7,16 @@ import {IUser, UserRole} from "../../interfaces";
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent {
-  @Output() addUser:EventEmitter<IUser> = new EventEmitter<IUser>();
+  @Output() addUserme:EventEmitter<IUser> = new EventEmitter<IUser>();
 
-  addUserHandler(fullName: string, role: string) {
+  addUserHandlerMe(fullName: string, role: string) {
+    if (!fullName || !role) return;
 
-    this.addUser.emit({
+    this.addUserme.emit({
       fullName:fullName,
       role: role as UserRole,
       status: 'inactive'
     })
-    console.log("new user created: ",  fullName, role)
+    console.log("new user created: ", fullName, role);
   }
 }

@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
-import { UserItemComponent } from './components/user-item/user-item.component';
+import {AddUserComponent, ButtonComponent, UserItemComponent} from "./components";
+import { RolePermissionDirective } from './directives/role-permission.directive';
+import { DropdownDirective } from './directives/dropdown.directive';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { DropdownItemComponent } from './components/dropdown/dropdown-item/dropdown-item.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AddUserComponent,
-    UserItemComponent
+    UserItemComponent,
+    ButtonComponent,
+    RolePermissionDirective,
+    DropdownDirective,
+    DropdownComponent,
+    DropdownItemComponent
   ],
   imports: [
     BrowserModule,
